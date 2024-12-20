@@ -1,0 +1,391 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1373,4955" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:gctv="clr-namespace:Google.Cloud.Translate.V3;assembly=Google.Cloud.Translate.V3" xmlns:gcvv="clr-namespace:Google.Cloud.Vision.V1;assembly=Google.Cloud.Vision.V1" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="68">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Google.Api.Gax.Grpc</x:String>
+      <x:String>Google.Cloud.Vision.V1</x:String>
+      <x:String>Google.Protobuf</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>Google</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>Google.Cloud.Translate.V3</x:String>
+      <x:String>Google.Cloud</x:String>
+      <x:String>Google.Api.Gax</x:String>
+      <x:String>Google.Protobuf.Collections</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
+      <AssemblyReference>Google.Api.Gax.Grpc</AssemblyReference>
+      <AssemblyReference>Google.Cloud.Vision.V1</AssemblyReference>
+      <AssemblyReference>Google.Protobuf</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>Google.Apis.Core</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>Google.Cloud.Translation.V2</AssemblyReference>
+      <AssemblyReference>Google.Cloud.Translate.V3</AssemblyReference>
+      <AssemblyReference>Google.LongRunning</AssemblyReference>
+      <AssemblyReference>Google.Api.Gax</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="849,4252" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Default="3" Name="max_row" />
+      <Variable x:TypeArguments="x:Int32" Default="3" Name="max_col" />
+      <Variable x:TypeArguments="x:String" Default="starry-compiler-234414" Name="project_id" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <InvokeMethod sap2010:Annotation.AnnotationText="구글의 이미지 API를사용하기 위한 준비&#xA;cloud.googe.com에서 서비스 어카운트 생성을 하고 관련 설정 json 파일을 내려받아야함" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="762,261" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="SetEnvironmentVariable" TargetType="s:Environment">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <InArgument x:TypeArguments="x:String">GOOGLE_APPLICATION_CREDENTIALS</InArgument>
+      <InArgument x:TypeArguments="x:String">[Path.Combine( Environment.CurrentDirectory, "starry-compiler-234414-7befd65b7c36.json")]</InArgument>
+    </InvokeMethod>
+    <Sequence sap:VirtualizedContainerService.HintSize="762,3968" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="gcvv:ImageAnnotatorClient" Name="client" />
+        <Variable x:TypeArguments="gctv:TranslationServiceClient" Name="tr_client" />
+        <Variable x:TypeArguments="x:String" Name="variable1" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="728,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="gcvv:ImageAnnotatorClient">[client]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="gcvv:ImageAnnotatorClient">[ImageAnnotatorClient.Create()]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="728,133" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="gctv:TranslationServiceClient">[tr_client]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="gctv:TranslationServiceClient">[Google.Cloud.Translate.V3.TranslationServiceClient.Create()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: reCAPTCHA 데모" sap:VirtualizedContainerService.HintSize="728,3637" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0c1809df-d34a-41f5-8071-5781dcb2b4e7" Version="V1">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="694,3396" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="statement" />
+                <Variable x:TypeArguments="x:String" Name="targetObject" />
+                <Variable x:TypeArguments="x:String" Name="full_desc" />
+                <Variable x:TypeArguments="njl:JObject" Name="jobj" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click '로봇이 아닙니다.'" sap:VirtualizedContainerService.HintSize="660,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0c1809df-d34a-41f5-8071-5781dcb2b4e7">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://google.com/recaptcha/api2/anchor?ar=1&amp;k=6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-&amp;co=aHR0cHM6Ly9nb29nbGUuY29tOjQ0Mw..&amp;hl=ko&amp;v=zIriijn3uj5Vpknvt_LnfNbF&amp;size=normal&amp;sa=action&amp;cb=cdj3xxdq9th3" DesignTimeRectangle="113, 958, 56, 56" DesignTimeScaleFactor="2" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl name='a-7aiav1lhskg3' tag='IFRAME' /&gt;&lt;webctrl aria-role='presentation' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='a-7aiav1lhskg3' tag='IFRAME' /&gt;&lt;webctrl aria-role='presentation' tag='DIV' type='' class='recaptcha-checkbox-border' aaname='' /&gt;" Guid="09c4631e-3e29-4d4d-af66-0c5a2cfd9450" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAD9SURBVGhD7dsxDsIwEETR3P9WkZ3W54hzg1RGW4DgO6Kf9Yy0DXyKhyjJdt/3WOk2vpD9fsDneY7W2qi1jn3fpS8MYem9P4PjDX4oy32jP+D4NhhmubBN4FLKFGa54zhmMCP10WMwA/XRYzAD9dFjMAP10WMwA/XRYzAD9dFjMAP10WMwA/XRYzAD9dFjMAP10WMwA/XRYzAD9dFjMAP10WMwA/XRYzAD9dFjMAP10WMwA/XRYzAD9dFjMAP10WMwA/XRYzAD9dFjMAP10WMwA/XRYzAD9dFjcPyJmlGWe/yD+HKPAGR+yOO6rhn8Rmd5jCd+xn8f41nllgO/AKxHlaUJpmS3AAAAAElFTkSuQmCC" InformativeScreenshot="242ba2a139e836c9731d84ced35f967f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='reCAPTCHA 데모' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="193, 914, 304, 148" ElementType="Text" FriendlyName="'로봇이 아닙니다.'" FullSelectorArgument="&lt;webctrl name='a-7aiav1lhskg3' tag='IFRAME' /&gt;&lt;webctrl id='recaptcha-anchor-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl name='a-7aiav1lhskg3' tag='IFRAME' /&gt;&lt;webctrl id='recaptcha-anchor-label' tag='LABEL' type='' class='rc-anchor-center-item rc-anchor-checkbox-label' aaname='로봇이 아닙니다.' check:innerText='로봇이 아닙니다.' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NGetText DisplayName="Get Text '자전거'" sap:VirtualizedContainerService.HintSize="660,190" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="0c1809df-d34a-41f5-8071-5781dcb2b4e7">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://google.com/recaptcha/api2/bframe?hl=ko&amp;v=zIriijn3uj5Vpknvt_LnfNbF&amp;k=6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-" DesignTimeRectangle="253, 470, 704, 75" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'자전거'" FullSelectorArgument="&lt;webctrl name='c-7aiav1lhskg3' tag='IFRAME' /&gt;&lt;webctrl tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl name='c-7aiav1lhskg3' tag='IFRAME' /&gt;&lt;webctrl tag='STRONG' type='' class='' /&gt;" Guid="f09b837b-28e7-4125-9a5e-e8502fb6167e" ImageBase64="" InformativeScreenshot="0c0ce79d768a45c864b1082d56b8b52f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='reCAPTCHA 데모' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                </uix:NGetText.Target>
+                <uix:NGetText.Text>
+                  <OutArgument x:TypeArguments="x:String">[statement]</OutArgument>
+                </uix:NGetText.Text>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text '버스가 있는'" sap:VirtualizedContainerService.HintSize="660,190" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="0c1809df-d34a-41f5-8071-5781dcb2b4e7" TextString="[full_desc]" Version="V3">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://google.com/recaptcha/api2/bframe?hl=ko&amp;v=zIriijn3uj5Vpknvt_LnfNbF&amp;k=6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-" DesignTimeRectangle="205, 422, 772, 228" DesignTimeScaleFactor="2" FriendlyName="'버스가 있는'" FullSelectorArgument="&lt;webctrl name='c-*' tag='IFRAME' /&gt;&lt;webctrl class='rc-imageselect-desc-wrapper' parentid='rc-imageselect' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='c-*' tag='IFRAME' /&gt;&lt;webctrl class='rc-imageselect-desc-wrapper' parentid='rc-imageselect' tag='DIV' type='' aaname='' /&gt;" Guid="69810634-6142-4855-80c2-135714fe772a" ImageBase64="" InformativeScreenshot="fec62e228276de8e608605b63ec1319f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='reCAPTCHA 데모' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <If Condition="[full_desc.Contains(&quot;타일을 모두 선택하세요&quot;)]" sap:VirtualizedContainerService.HintSize="660,476" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="465.5,215" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431.5,155" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Int32">[max_col]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Int32">4</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Int32">[max_row]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Int32">4</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <Assign DisplayName="영어로 번역해서 처리해야 함...." sap:VirtualizedContainerService.HintSize="660,115" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[targetObject]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[tr_client.TranslateText( string.Format("projects/{0}/locations/global", project_id), "en-GB", { statement.Split( " "c).Last().ToLower} ).Translations(0).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="660,123" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jobj]" JsonString="[targetObject]" />
+              <Assign sap:VirtualizedContainerService.HintSize="660,115" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[targetObject]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[jobj("translatedText").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="660,126" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;|||&quot;+statement+&quot;|||&quot; + targetObject]" />
+              <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="660,1809" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[Enumerable.Range(1, max_row)]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:Int32">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Int32" Name="row" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="624,1657" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="590,1595" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[Enumerable.Range(1, max_col)]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:Int32">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Int32" Name="col" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="554,1443" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="ui:UiElement" Name="picture_elm" />
+                                <Variable x:TypeArguments="gcvv:Image" Name="image" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTakeScreenshot DisplayName="Take Screenshot 'TD'" FileName="[string.Format(&quot;my{0}x{1}.png&quot;, row, col)]" FileNameMode="None" sap:VirtualizedContainerService.HintSize="520,267" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" OutUiElement="[picture_elm]" ScopeIdentifier="0c1809df-d34a-41f5-8071-5781dcb2b4e7">
+                                <uix:NTakeScreenshot.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://google.com/recaptcha/api2/bframe?hl=ko&amp;v=zIriijn3uj5Vpknvt_LnfNbF&amp;k=6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-" DesignTimeRectangle="203, 854, 194, 194" DesignTimeScaleFactor="2" FriendlyName="'TD'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl name='c-*' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='{0}' tag='TD' tableCol='{1}' /&gt;&quot;, row, col)]" FuzzySelectorArgument="&lt;webctrl name='c-15ost47uk5yy' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' tableCol='1' /&gt;" Guid="b68e2f23-8847-4fcb-b295-de100d5fe1ae" ImageBase64="" InformativeScreenshot="f2eea426ad4abf578e617f3183bb64ab.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='reCAPTCHA 데모' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                </uix:NTakeScreenshot.Target>
+                              </uix:NTakeScreenshot>
+                              <Assign sap:VirtualizedContainerService.HintSize="520,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="gcvv:Image">[image]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="gcvv:Image">[Google.Cloud.Vision.V1.Image.FromFile( string.Format("my{0}x{1}.png", row,col))]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:ForEach x:TypeArguments="gcvv:EntityAnnotation" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="520,999" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[client.DetectLabels( image)]">
+                                <ui:ForEach.Body>
+                                  <ActivityAction x:TypeArguments="gcvv:EntityAnnotation">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="gcvv:EntityAnnotation" Name="label" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="484,847" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,126" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[label]" />
+                                      <If Condition="[label.Description.ToLower().Contains( targetObject)]" sap:VirtualizedContainerService.HintSize="450,659" sap2010:WorkflowViewState.IdRef="If_1">
+                                        <If.Then>
+                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,405" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,126" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[string.Format( &quot;Found matching --- {0} / {1}&quot;, label.Description , label.Score)]" />
+                                            <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="382,171" sap2010:WorkflowViewState.IdRef="NClick_2" InUiElement="[picture_elm]" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" />
+                                            <ui:Break sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="Break_3" />
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEach.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:ForEach>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                      </ui:ForEach>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAQlSURBVFhHvVdbbJRVEObFIF6ffPNBVPRNjdKWB60RcRXtAwm10toHFCvGoA9GrQlBAwlFQS4J+FBaLMQ0bCuBVqxQUkDqpY1FYpaQNmgBtVCzu91e2H/Xvcx8Zn7/3ZzLsv1bG79kks058883Z87MnNl583yCme9g5hoiaiaiASIaI6K0J1FvrZmZq0XX/H7WYOYHiaiFiJLwCSJKENE+Zl5k2vMNALcQ0XYiypoEfkFEGSLaxswLTPtFwcwPENEF0+BsQUQhZr7f5CkIZn6UiCKmEUH22gic1s8x8e6biL74HMKBJQg/U4boygDG33kDzoG9yI78YX7mgojCAB4x+TR4J7fIs6NXMbnxA4SXlSL8dElxWVaKyY/ed78xIU7cMBLMfGuhsCdPdCHyQrlNNI1EKp7E36dPmOZy12HnhCScqewc3G8ZnolMbd1omnRBRFs1cq/UtGyXk5sGcxKrq0a8aTeSXx9GsusI4k17EHu9Riff0QAwqybzkOrQrkLqXFWQZIs8/4RFPFa7Aqmz/aqqhtRAH6KrKnB9z6fmlgVpWi45gDvNJhPf9ZZFPr7uFfDUlKpWEOzEzaWCICKHmW+X8NeoG5wYRqZ7Pibr78mTS8nRRExVmxMw80sS/mZ1kS43INNzkyvO7rsQWb4YyeNHVZU5AxE1igMD6mL250DeAZHU4YVAJqOqzBmIqF8cGFMXM713aw5kz1er2xaWbo77ltMX9INIYxIH0upi5uR8zQH6bYO6bcEkKSatP2hU4kDqf3Wg5UxK+zbnQFRdtK4gtErdtmCSFJP2fisC7hXoSXjuWc2Bkd6HkKaZJ+GlMFkOnBm0csBNQqMMP86TH+1aiMeDK9Ax3KOq+EKwL205MDqht2a3DGWGUxc5cRmJngVo6HgMi4MrXQl0vIpoclxVK4rrSUblLkcjX92YMNWkEVW5w6bMcOrGzr5NefKc1Ha/h4nU9K04nQXqDyat07fZ9+8AuC33GO1TN6/Fwyg/9LLlRMVXa9F79ayqquHi+BWs6Qxi6eZJjVyikUhZ4d+rPseL5IlUFY5d6bUcyEnlN29j+7kWtF88hi9/PY7PQq14rWc9SoKV7n7Z/no89cmfeQe+G9LnWil9Zr4v74AXhW2aFoAvhjotcr9S0roa5Tt+smpfQERbNHKBN4afN5W7f/8e5YdqLYLppKytCk2hTtOckP8C4GaT34VMKd70qmHUiWD9jztR2vZviKeTtac+xGBs2DQj5H8BuNfk1SCjcyEnBJKcBwaPYN23m7C8sw5L2qvckwY61qDu5AY3F4Zil8zPXAg5Mz9s8hWEF4mQaWS28MJe/OQmZHSW6dWsjpnA++O65YZ37gdeNOQfsTQOXxBdqXOr1P4LZICUGU76tzwikifynHoiv2WtUdprvsP5wD+h4X82yHrydwAAAABJRU5ErkJggg==" InformativeScreenshot="3a06e1d14bdb0c2c317fee70d5d58f8f.jpg" Selector="&lt;html app='msedge.exe' title='reCAPTCHA 데모' /&gt;" Url="https://google.com/recaptcha/api2/demo" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
